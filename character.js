@@ -1,7 +1,6 @@
 //    part2 of next level js , object constrcutor
 import { getDiceRollArray , getDicePlaceholderHtml , getPercentage } from "./utils.js"
 
-
 class Character {
     constructor(data) {
         Object.assign(this, data)
@@ -26,23 +25,6 @@ class Character {
         }    
         console.log(`Damage Taken Array ${this.name}  : ${attackScoreArray}`)
     }
-/*
-CHALLENGE
-1. Instead of just logging the percent, getHealthBarHtml 
-needs to return this string of html:
-`<div class="health-bar-outer">
-    <div class="health-bar-inner *YOUR CODE HERE* " 
-        style="width: *YOUR CODE HERE* %;">
-    </div>
-</div>`
-2. You need to make some changes to that string of HTML.
-2a. If the amount of health left is 25% or lower, add the class 
-"danger" to the div with the class "health-bar-inner".
-2b. The width of that div should be the % health remaining. 
-3. Be sure to add the healthBar variable to the string of HTML
-rendered by getCharacterHtml.
-**hint.md for help!!**       
-*/
 
     getHealthBarHtml() {
         const percent = getPercentage(this.health, this.maxHealth)

@@ -33,7 +33,7 @@ document.addEventListener('click',function(e){
             monster.takeDamage(wizard.currentDiceScore)
             render()
         
-                 if(wizard.dead){
+            if(wizard.dead){
                 endGame()
             }
             else if(monster.dead){
@@ -55,13 +55,12 @@ document.addEventListener('click',function(e){
     }
 })
 
-
 function endGame() {
     const endMessage = wizard.health === 0 && monster.health === 0 ?
         "No victors - all creatures are dead" :
         wizard.health > 0 ? "The Wizard Wins" :
         "The Orc is Victorious"
-isWaiting = true
+    isWaiting = true
 
         const endEmoji = wizard.health > 0 ? "🔮" : "☠️"
         setTimeout(() => {
